@@ -1,0 +1,640 @@
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #17283d;
+}
+
+:root {
+    --navy: #10263f;
+    --dark: #081a2e;
+    --gold: #c7a45b;
+    --white: #ffffff;
+    --gray: #667487;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: var(--dark);
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.brand small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-top: 5px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: var(--gold);
+}
+
+.navbar nav .nav-contact {
+    border: 1px solid var(--gold);
+    padding: 12px 20px;
+    color: var(--gold);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 20, 38, .94),
+            rgba(5, 20, 38, .65),
+            rgba(5, 20, 38, .2)
+        ),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    margin: 25px 0;
+    font-weight: 800;
+}
+
+.hero p {
+    max-width: 590px;
+    color: #d4dce5;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+    display: inline-block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background: white;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--dark);
+}
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    margin: 15px 0;
+    color: var(--navy);
+}
+
+.section-heading p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.about-text .gold-label,
+.why-content .gold-label {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.about-text h2,
+.why-content h2 {
+    font-size: 37px;
+    line-height: 1.3;
+    margin: 18px 0;
+    color: var(--navy);
+}
+
+.about-text p,
+.why-content p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================
+   COMPANY VALUES
+========================= */
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--navy);
+    padding: 55px 8%;
+    gap: 40px;
+}
+
+.value-item {
+    color: white;
+}
+
+.value-item h2 {
+    color: var(--gold);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.value-item h3 {
+    margin-bottom: 12px;
+}
+
+.value-item p {
+    color: #c2ceda;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   FLEET
+========================= */
+
+.fleet {
+    background: #f5f7fa;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.fleet-card {
+    background: white;
+    box-shadow: 0 5px 25px rgba(0,0,0,.07);
+    transition: .3s;
+}
+
+.fleet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.fleet-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.fleet-info {
+    padding: 25px;
+}
+
+.fleet-info span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.fleet-info h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.fleet-info p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.fleet-info a {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fleet-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: var(--navy);
+    padding: 90px 8%;
+}
+
+.section-heading.light h2 {
+    color: white;
+}
+
+.section-heading.light p {
+    color: #c3cfdb;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 40px 30px;
+    border: 1px solid rgba(199,164,91,.35);
+    text-align: center;
+    transition: .3s;
+}
+
+.service-card:hover {
+    background: rgba(255,255,255,.06);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: #c3cfdb;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.why-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.why-content ul {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.why-content li {
+    color: var(--navy);
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background:
+        linear-gradient(
+            rgba(6, 25, 46, .94),
+            rgba(6, 25, 46, .94)
+        ),
+        url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+    padding: 90px 10%;
+    color: white;
+}
+
+.contact-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-content > span {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.contact-content h2 {
+    font-size: 42px;
+    margin: 20px 0;
+    line-height: 1.3;
+}
+
+.contact-content > p {
+    color: #c5d0dc;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-details small {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.contact-details p {
+    margin-top: 12px;
+    font-size: 13px;
+    color: white;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #061323;
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-brand h3 {
+    letter-spacing: 2px;
+}
+
+.footer-brand small {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #9eacbb;
+    font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .about-grid,
+    .why-us {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .fleet-grid,
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 7%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .about-text h2,
+    .why-content h2 {
+        font-size: 29px;
+    }
+
+    .fleet-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 70px 6%;
+    }
+
+    .contact-content h2 {
+        font-size: 32px;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
